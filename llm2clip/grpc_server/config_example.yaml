@@ -1,0 +1,10 @@
+model_params:
+  clip_name: "EVA02-CLIP-L-14-336"
+  ckpt_path: "/home/chiebot-cv/.cache/huggingface/hub/models--microsoft--LLM2CLIP-EVA02-L-14-336/snapshots/e6a348e3b1448ff6e2b0f6b09c1b8e9343461e4b/LLM2CLIP-EVA02-L-14-336.pt"
+  llm_model_name: "microsoft/LLM2CLIP-Llama-3-8B-Instruct-CC-Finetuned"
+  l2v_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  device: "cuda:7"
+grpc_args:
+  host: "0.0.0.0"
+  port: "52009"
+  max_workers: 1

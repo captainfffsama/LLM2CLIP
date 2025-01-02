@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package CLIPService;
+
+service CLIPService{
+  rpc ImageEmbeddingGet (ImageEmbeddingRequest) returns (Tensor) {}
+  rpc TextEmbeddingGet (TextEmbeddingRequest) returns (Tensor) {}
+  rpc ZeroShotCls (ImageTextData) returns (Tensor) {}
+}
+
+message ImageEmbeddingRequest {
+  bytes imdata = 1; // 图像二进制数据-base64编码
+  repeated int32 imsize=2; //个别网络用于指示嵌入用多大的图片算,这里没用,仅为了兼容以前工具接口
+}
+message TextEmbeddingRequest {
+    repeated string textdata=1;
+}
+
+message ImageTextData{
+    ImageEmbeddingRequest imdata=1;
+    TextEmbeddingRequest textdata=2;
+}
+
+message Tensor {
+  repeated float data =1;
+  repeated int32 shape =2;
+}
