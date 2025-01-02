@@ -31,10 +31,10 @@ for item in os.listdir(_current_file_dir):
             _close_grpc_version = item
             _close_value = c
 
-get_image_encode_pb2 = importlib.import_module(
+clip_pb2 = importlib.import_module(
     f"{__name__}.{_close_grpc_version}.clip_pb2"
 )
-get_image_encode_pb2_grpc = importlib.import_module(
+clip_pb2_grpc = importlib.import_module(
     f"{__name__}.{_close_grpc_version}.clip_pb2_grpc"
 )
 print(f"venv grpc version is: {_venv_grpc_version}")
@@ -46,6 +46,6 @@ print(
 
 
 # NOTE: 方便写代码用
-from .v1_66_1 import clip_pb2, clip_pb2_grpc  # noqa
+#from .v1_66_1 import clip_pb2, clip_pb2_grpc  # noqa
 
 __all__ = ["clip_pb2", "clip_pb2_grpc"]
